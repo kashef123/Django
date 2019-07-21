@@ -1,0 +1,106 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="{% static 'css/favicon.ico' %}">
+
+  <title>AP EYE</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+</head>
+
+<style>
+    body {
+      
+      background-color:gray;
+  
+    }
+  </style>
+
+
+<body class="text-center">
+   
+<form action="{% url "MyClassifier:signup" %}" method="POST">
+    {% csrf_token %}
+   <div class="container">
+  <div class="row">
+    <div class="col-6">
+             <label class = "text-white" for="usertype" class="col-form-label">Category</label>
+             <select class = "custom-select" name = "usertype">
+                <option value="" >--------------</option>
+                <option value="0">Doctor</option>
+                <option value="1">Owner</option>
+                </select>
+            </div>
+
+      <div class="col-6 ">
+        <label class = "text-white" for="Email">Email</label>
+        <input type="email" class="form-control" name="Email" placeholder="Email" required>
+        <label>{{error_email}}</label>
+      </div>
+
+
+      <div class="col-6 ">
+          <label class = "text-white" for="Email">Mobile Phone</label>
+          <input type="text" class="form-control" name="phone" placeholder="Phone" required>
+          <label>{{error_email}}</label>
+        </div>
+      
+      <div class="col-6 ">
+        <label class = "text-white" for="PassWord">Password</label>
+        <input type="password" class="form-control" name="PassWord" placeholder="Password" required> 
+      </div>
+    
+
+    <div class="col-6 ">
+        <label class = "text-white" for="UserName">Username</label>
+        <input type="text" class="form-control" name="UserName" placeholder="kashef132" required>
+        <label >{{ error_user }}</label>
+    </div>
+    
+    <div class="col-6 ">
+      <label class = "text-white" for="FirstName">First Name</label>
+      <input type="text" class="form-control" name="FirstName" placeholder="ahmed" required>
+    </div>
+
+  
+    <div class="col-6 ">
+      <label class = "text-white" for="LastName">Last Name</label>
+      <input type="text" class="form-control" name="LastName" placeholder="kashef" required>
+    </div>
+
+    <div class="col-6 ">
+      <label class = "text-white" for="country">Country</label>
+      <input type="text" class="form-control" name="country" placeholder="Egypt" required>
+    </div>
+  
+    <div class="col-6 ">
+      <label class = "text-white" for="city">City</label>
+      <input type="text" class="form-control" name="city" placeholder="Cairo" required>
+    </div>
+
+    <div class="col-6 ">
+      <label class = "text-white" for="region">Region</label>
+      <input type="text" class="form-control" name="region" placeholder="Maadi" required>
+    </div>
+
+
+ 
+  
+
+   </div>
+
+     <button type="submit" class="btn btn-primary m-5">Sign in</button>
+  </form>
+</body>
+
+</html>

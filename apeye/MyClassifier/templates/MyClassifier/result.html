@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<body class="text-center">
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th scope="col">Image</th>
+                <th scope="col">Predictions</th>
+                <th scope="col">Precentage</th>
+
+
+            </tr>
+        </thead>
+
+        <tbody>
+
+
+
+            <tr>
+
+                <td> <img src="{{url}}" height="259" width="256" alt=""></td>
+                <td> {% for x in names %}
+                    <p>{{ x }}</p>
+                    {% endfor %} </td>
+
+
+                <td>{% for y in probs %}
+
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" style="max-width: {{ y }}%;"
+                            aria-valuenow="{{ y }}" style="max-width: {{ y }}%" aria-valuemin="0" aria-valuemax="100">
+                            <span class="text-dark">{{ y }}%</span>
+
+                        </div>
+
+                    </div> <br>
+                    {% endfor %}</td>
+
+
+      
+
+
+
+            </tr>
+
+
+
+        </tbody>
+
+
+    </table>
+    <form action="{% url "MyClassifier:comment" %}" method="post">
+
+        {% csrf_token %}
+
+        <div class="shadow-textarea">
+            <label class="text-white" for="comment">Add your comment</label>
+            <textarea class="form-control z-depth-1" name="comment" id="comment" rows="3"
+                placeholder="Write something here..."></textarea>
+            <div>
+                <button class="btn btn-success m-3" type="submit">Submit</button>
+            </div>
+        </div>
+
+    </form>
+
+  
+    <div  class="float-left">
+    <h2> Diseases </h2>
+    <a href="{% url "MyClassifier:earlyblight" %}" class="btn btn-primary stretched-link">Early Blight</a>
+    <a href="{% url "MyClassifier:lateblight" %}" class="btn btn-primary stretched-link">Late Blight</a>
+
+    </div>
+</body>
+
+{% endblock %}

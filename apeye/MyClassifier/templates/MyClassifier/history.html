@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+ 
+
+
+
+{% block content %}
+ <div class="overflow-auto">
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th scope="col">Image</th>
+                <th scope="col">Predictions</th>
+                <th scope="col">Precentage</th>
+                <th scope="col">Date</th>
+                <th scope="col">Rating</th>
+                <th scope="col">Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {%for obj in query %}
+
+            <tr>
+
+
+                <td> <img src="{{obj.pic.url}}" height="259" width="256" alt=""></td>
+
+
+                <td> {% for x in obj.pic_pred_names %}
+                    <p>{{ x }}</p>
+                    {% endfor %} </td>
+
+
+                <td>{% for y in obj.pic_pred_props %}
+
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" style="max-width: {{ y }}%;"
+                            aria-valuenow="{{ y }}" style="max-width: {{ y }}%" aria-valuemin="0" aria-valuemax="100">
+                            <span class="text-dark">{{ y }}%</span></div>
+
+                    </div> <br>
+                    {% endfor %}</td>
+
+
+                <td>{{obj.pic_date}}</td>
+                <td>{{obj.pic_rate}}</td>
+                <td>{{obj.pic_comment}}</td>
+
+            </tr>
+
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}

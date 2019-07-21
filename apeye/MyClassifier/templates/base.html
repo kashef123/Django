@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>AP-EYE</title>
+
+  <!-- Bootstrap core CSS -->
+
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'css/simple-sidebar.css' %}" rel="stylesheet">
+
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+
+
+</head>
+
+<style>
+
+  .progress-bar {
+    width: 0;
+    animation: progress 1.5s ease-in-out forwards;
+
+    .title {
+      opacity: 0;
+      animation: show 0.35s forwards ease-in-out 0.5s;
+    }
+  }
+
+  @keyframes progress {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
+        
+          <img src="{% static 'background/logo.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+         
+       
+      
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url "MyClassifier:test" %}">Testing </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{% url "MyClassifier:history" %}" class="nav-link">History</a>
+            </li>
+
+
+            <li class="nav-item">
+              <a href="{% url "MyClassifier:Analyze" %}" class="nav-link">Analyze</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{% url "MyClassifier:uploadPic" %}" class="nav-link">Upload</a>
+            </li>
+
+            
+          
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Settings
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a href="{% url "MyClassifier:MyProfile" %}" class="dropdown-item">My Profile</a>
+                <a class="dropdown-item" href="#">Help</a>
+                <a class="dropdown-item" href="#">Contact Us</a>
+                <a class="dropdown-item" href="{% url "MyClassifier:SignOut" %}">Log Out</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+        <div class ="mt-5">
+      {% block content %}
+
+
+      {% endblock %}
+    </div>
+
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src =" https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js">
+  </script>
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function (e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+
+    var $star_rating = $('.star-rating .fa');
+
+    var SetRatingStar = function () {
+      return $star_rating.each(function () {
+        if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+          return $(this).removeClass('fa-star-o').addClass('fa-star');
+        } else {
+          return $(this).removeClass('fa-star').addClass('fa-star-o');
+        }
+      });
+    };
+
+    $star_rating.on('click', function () {
+      $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+      return SetRatingStar();
+    });
+
+    SetRatingStar();
+    $(document).ready(function () {
+
+    });
+
+
+
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+
+</body>
+
+</html>

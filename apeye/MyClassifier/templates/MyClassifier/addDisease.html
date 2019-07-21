@@ -1,0 +1,98 @@
+{% extends 'base.html' %} {% block content %}
+
+
+ 
+ 
+<div class="section-block" id="basicform">
+    <h1 class="section-title text-center">Add Disease</h1>
+
+</div>
+<div class="card">
+    <h5 class="card-header">Input Disease</h5>
+    <div class="card-body">
+        <form action="{% url "MyClassifier:addDisease" %}" method="post" enctype="multipart/form-data"> 
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="file" name="disease_pic" id="disease_pic" accept=" image/jpeg" required>
+            </div>
+
+            
+            <div class="form-group">
+                <label for="disease_id" class="col-form-label">id</label>
+                <input id="disease_id" type="integer" name="disease_id" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="disease_name" class="col-form-label">disease_name</label>
+                <input id="disease_name" type="text" name="disease_name" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+             <label for="disease_type" class="col-form-label">disease_type</label>
+             <input id="disease_type" type="text" name="disease_type" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                    <label for="disease_plants" class="col-form-label">disease_plants</label>
+                    <textarea id="disease_plants"  name="disease_plants" class="form-control" required></textarea>
+                </div>
+
+            <div class="form-group">
+                <label for="disease_scientific_name">disease_scientific_name</label>
+                <textarea class="form-control" name="disease_scientific_name" id="disease_scientific_name" rows="3"
+                    required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="disease_breif">disease_breif</label>
+                <textarea class="form-control" name="disease_breif" id="disease_breif" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="disease_symptoms">الأعراض</label>
+                <textarea class="form-control" name="disease_symptoms" id="disease_symptoms" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="disease_trigger">محفزات</label>
+                <textarea class="form-control" name="disease_trigger" id="disease_trigger" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="disease_biological_control">disease_biological_control</label>
+                <textarea class="form-control" name="disease_biological_control" id="disease_biological_control" rows="3"
+                    required></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label for="disease_chemical_control">disease_chemical_control</label>
+                <textarea class="form-control" name="disease_chemical_control" id="disease_chemical_control" rows="3"
+                    required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="disease_preventive_mesures">disease_preventive_mesures</label>
+                <textarea class="form-control" name="disease_preventive_mesures" id="disease_preventive_mesures" rows="3"
+                    required></textarea>
+            </div>
+
+            <button class="btn btn-primary" id="upload-button" type="submit" required>Add Disease</button>
+        </form>
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

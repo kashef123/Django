@@ -1,0 +1,80 @@
+list_of_predictions = [ 440, 75 , 0, 0, 0,17, 0,408, 351,271, 0, 0, 0, 0, 0, 143, 192, 0, 74, 0, 5, 211, 0, 0, 0, 17, 334, 0, 8, 5, 2, 32, 31, 0, 0, 1, 15, 0]
+
+
+
+    '0': 'Apple scab', 440, 
+
+    "1": "Apple Black rot ("frogeye-leaf-spot"), 75 
+
+  ***  "2": "Apple Cedar apple rust",
+
+    "3": "Apple healthy", -------
+
+    "4": "Blueberry healthy",---------
+
+  "5": "Cherry-including sour-Powdery mildew", 17
+
+   "6": "Cherry-including sour-healthy",-------------------
+
+  "7": "Corn-maize-Cercospora leaf spot Gray leaf spot", 408
+
+   "8": "Corn-maize-Common rust", 351
+
+   "9": "Corn_(maize) Northern Leaf Blight", 271
+
+    "10": "Corn_(maize) healthy",
+  ***    "11": "Grape Black rot",
+
+***      "12": "Grape Esca_(Black_Measles)",
+
+ ***     "13": "Grape Leaf_blight_(Isariopsis_Leaf_Spot)",
+
+    "14": "Grape healthy", -------------
+
+   "15": "Orange Haunglongbing_(Citrus_greening)", 143
+
+ "16": "Peach Bacterial spot", 192
+
+    "17": "Peach healthy", -------------
+
+   "18": "Pepper bell Bacterial spot", 74
+
+    "19": "Pepper bell healthy",-------------
+
+    "20": "Potato Early blight", 5 
+
+    "21": "Potato Late blight", 211
+
+    "22": "Potato healthy",--------
+
+    "23": "Raspberry healthy",------------
+
+    "24": "Soybean healthy",----------
+
+    "25": "Squash Powdery mildew", 17 
+
+   "26": "Strawberry Leaf scorch", 334
+
+    "27": "Strawberry healthy",-------
+
+ "28": "Tomato Bacterial_spot", 8 
+
+ "29": "Tomato Early blight", 5
+
+  "30": "Tomato Late blight", 2
+
+    "31": "Tomato Leaf Mold", 32 
+
+   "32": "Tomato Septoria leaf spot", 31
+
+   ***   "33": "Tomato Spider mites Two-spotted spider mite",
+
+  ***    "34": "Tomato Target Spot",
+
+    "35": "Tomato Yellow Leaf Curl Virus", 1
+
+   "36": "Tomato mosaic virus", 15
+
+    "37": "Tomato healthy"---------
+}
+

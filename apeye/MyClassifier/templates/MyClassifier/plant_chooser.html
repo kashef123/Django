@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  .card {
+
+    width: 5%;
+    height: 10%;
+    background: white
+  }
+
+  .card-text {
+
+    color: black
+  }
+</style>
+
+
+
+
+
+<div class="container">
+  <div class="row">
+  {% for plant in plants %}
+    <div class="card col-md-4 col-lg-3  col-sm-6 col-12">
+      <div class="card-header bg-success">
+        <strong class="card-title text-white">{{plant.name}}<small><span class="badge badge-info  float-right mt-1">{{plant.state}}</span></small></strong>
+      </div>
+      <div class="card-body">
+        <img class="align-self-center rounded-circle mr-3" src=" {{plant.pic.url}} " style="width:200px;height:200px;"alt="crop">
+        <p class="card-text"></p>
+          <form action="{% url "MyClassifier:setModel" %}" method="post" enctype="multipart/form-data">
+           {% csrf_token %} 
+          <input  type="hidden" name= "plant_name" value = {{plant.name}}>
+          <button class="btn btn-success" type="submit"> TEST </button>
+          </form>
+        </div>
+      </div>
+
+
+    {% endfor %}
+
+
+
+{% endblock %}

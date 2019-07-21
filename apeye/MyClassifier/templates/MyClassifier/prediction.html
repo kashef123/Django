@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+ 
+{% block content %}
+
+<div class="d-flex justify-content-center" > 
+    <div class = "align-middle">
+<form action="{% url "MyClassifier:construct" %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  
+
+      <div class="row">
+      <div class="col">
+        <input type="file" name="picture" id="pic" accept=" image/jpeg" required></div>
+        
+      <div class="col">
+        <button class="btn btn-primary" id="upload-button" type="submit" required>Test leave disease</button>
+      </div>
+
+</div>
+ 
+</form>
+
+
+</div>
+</div>
+
+
+{% endblock %}  
